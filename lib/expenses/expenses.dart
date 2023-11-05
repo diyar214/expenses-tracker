@@ -1,8 +1,9 @@
-import 'package:expense_tracker/enum_and_map.dart';
-import 'package:expense_tracker/expenses/widgets/expense_list.dart';
 import 'package:flutter/material.dart';
 
+import '../enum_and_map.dart';
 import '../model/expense.dart';
+import 'widgets/expense_list.dart';
+import 'widgets/new_expense.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -26,9 +27,22 @@ class _ExpensesState extends State<Expenses> {
       date: DateTime.now(),
     ),
   ];
+
+  void _openModal() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const NewExpense(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Expense Tracker'),
+        centerTitle: false,
+        actions: [IconButton(onPressed: _openModal, icon: Icon(Icons.add))],
+      ),
       body: Column(
         children: [
           const Text('The chart'),

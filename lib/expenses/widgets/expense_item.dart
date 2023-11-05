@@ -1,6 +1,7 @@
-import 'package:expense_tracker/enum_and_map.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/constant.dart';
+import '../../core/enum_and_map.dart';
 import '../../model/expense.dart';
 
 class ExpenseItem extends StatelessWidget {
@@ -13,21 +14,41 @@ class ExpenseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
-      child: Card(
+    return Card(
+      color: cardColor,
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title),
+            Text(
+              expense.title,
+              style: TextStyle(fontSize: 18, color: primTextColor),
+            ),
             const SizedBox(height: 4),
             Row(children: [
-              Text('\$${expense.amount.toStringAsFixed(2)}'),
+              Text(
+                '\$${expense.amount.toStringAsFixed(2)}',
+                style: TextStyle(
+                    fontSize: 16,
+                    color: secTextColor,
+                    fontWeight: FontWeight.w600),
+              ),
               const Spacer(),
               Row(
                 children: [
-                  Icon(categoryIcons[expense.category]),
-                  const SizedBox(width: 4),
-                  Text(expense.formattedDate)
+                  Icon(
+                    categoryIcons[expense.category],
+                    size: 24,
+                    color: primTextColor,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    expense.formattedDate,
+                    style: TextStyle(fontSize: 16, color: primTextColor),
+                  )
                 ],
               )
             ])
