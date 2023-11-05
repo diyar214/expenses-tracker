@@ -1,7 +1,7 @@
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
 
-import '../enum_and_map.dart';
+import '../core/enum_and_map.dart';
 
 const uuid = Uuid();
 

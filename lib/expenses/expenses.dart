@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../enum_and_map.dart';
+import '../core/enum_and_map.dart';
 import '../model/expense.dart';
 import 'widgets/expense_list.dart';
 import 'widgets/new_expense.dart';
