@@ -1,5 +1,5 @@
-import 'package:expense_tracker/enum.dart';
-import 'package:expense_tracker/expenses/expense_list.dart';
+import 'package:expense_tracker/enum_and_map.dart';
+import 'package:expense_tracker/expenses/widgets/expense_list.dart';
 import 'package:flutter/material.dart';
 
 import '../model/expense.dart';

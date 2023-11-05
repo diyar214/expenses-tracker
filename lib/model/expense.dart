@@ -1,6 +1,7 @@
 import 'package:uuid/uuid.dart';
+import 'package:intl/intl.dart';
 
-import '../enum.dart';
+import '../enum_and_map.dart';
 
 const uuid = Uuid();
 
@@ -17,4 +18,8 @@ class Expense {
     required this.date,
     required this.category,
   }) : id = uuid.v4();
+
+  String get formattedDate {
+    return DateFormat.yMd().format(date);
+  }
 }
