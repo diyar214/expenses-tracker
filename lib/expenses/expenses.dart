@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/constant.dart';
 import '../core/enum_and_map.dart';
 import '../model/expense.dart';
 import 'widgets/expense_list.dart';
@@ -39,9 +40,17 @@ class _ExpensesState extends State<Expenses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense Tracker'),
+        title: Text(
+          'Expense Tracker',
+          style: TextStyle(fontSize: 18.0, color: primTextColor),
+        ),
         centerTitle: false,
-        actions: [IconButton(onPressed: _openModal, icon: Icon(Icons.add))],
+        actions: [
+          IconButton(
+            onPressed: _openModal,
+            icon: Icon(Icons.add),
+          ),
+        ],
       ),
       body: Column(
         children: [
