@@ -1,3 +1,4 @@
+import 'package:expense_tracker/core/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'expenses/expenses.dart';
@@ -9,7 +10,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Expense Tracker',
-      theme: ThemeData(useMaterial3: true),
+      darkTheme: AppTheme.darkAppTheme(),
+      theme: AppTheme.lightAppTheme(),
+      themeMode: ThemeMode.dark,
       home: Expenses(),
     );
   }
