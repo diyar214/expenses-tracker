@@ -3,8 +3,6 @@ import 'package:expense_tracker/model/expense.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../core/constant.dart';
-
 class NewExpense extends StatefulWidget {
   final Function(Expense) onAddExpense;
 
@@ -112,7 +110,6 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedDate == null
                           ? 'No date selected'
                           : DateFormat.yMd().format(_selectedDate!),
-                      style: TextStyle(fontSize: 16.0, color: primTextColor),
                     ),
                     IconButton(
                       onPressed: _presentDatePicker,
@@ -134,8 +131,6 @@ class _NewExpenseState extends State<NewExpense> {
                         value: category,
                         child: Text(
                           category.name.toUpperCase(),
-                          style:
-                              TextStyle(fontSize: 16.0, color: primTextColor),
                         ),
                       ),
                     )
