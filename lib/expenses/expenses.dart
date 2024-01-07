@@ -1,3 +1,4 @@
+import 'package:expense_tracker/chart/chart.dart';
 import 'package:flutter/material.dart';
 
 import '../core/enum_and_map.dart';
@@ -83,7 +84,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('The chart'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             child: _registeredExpenses.length == 0
                 ? Center(

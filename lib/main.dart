@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       title: 'Expense Tracker',
       darkTheme: AppTheme.darkAppTheme(),
       theme: AppTheme.lightAppTheme(),
-      themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.dark,
       home: Expenses(),
     );
   }

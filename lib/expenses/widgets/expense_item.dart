@@ -27,7 +27,6 @@ class ExpenseItem extends StatelessWidget {
                 Text(
                   '\$${expense.amount.toStringAsFixed(2)}',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Colors.purple.shade500,
                         fontSize: 14.0,
                         fontWeight: FontWeight.bold,
                       ),
