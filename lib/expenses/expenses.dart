@@ -69,6 +69,8 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -82,21 +84,42 @@ class _ExpensesState extends State<Expenses> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registeredExpenses),
-          Expanded(
-            child: _registeredExpenses.length == 0
-                ? Center(
-                    child: Text('No Expenses'),
-                  )
-                : ExpenseList(
-                    expenses: _registeredExpenses,
-                    onRemoveExpense: _removeExpense,
+      body: width <= 600
+          ? Column(
+              children: [
+                Chart(expenses: _registeredExpenses),
+                Expanded(
+                  child: _registeredExpenses.length == 0
+                      ? Center(
+                          child: Text('No Expenses'),
+                        )
+                      : ExpenseList(
+                          expenses: _registeredExpenses,
+                          onRemoveExpense: _removeExpense,
+                        ),
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Chart(expenses: _registeredExpenses),
                   ),
-          ),
-        ],
-      ),
+                ),
+                Expanded(
+                  child: _registeredExpenses.length == 0
+                      ? Center(
+                          child: Text('No Expenses'),
+                        )
+                      : ExpenseList(
+                          expenses: _registeredExpenses,
+                          onRemoveExpense: _removeExpense,
+                        ),
+                ),
+              ],
+            ),
     );
   }
 }

@@ -41,6 +41,7 @@ class _NewExpenseState extends State<NewExpense> {
         isAmountInvalid ||
         _selectedDate == null) {
       showDialog(
+        useSafeArea: true,
         context: context,
         builder: (ctx) => AlertDialog(
           title: const Text('Invalid input'),
